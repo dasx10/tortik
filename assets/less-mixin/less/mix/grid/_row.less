@@ -1,0 +1,48 @@
+.row-offsets(){
+    .mx(@offset_one_side * -1 - 5px);
+    transform:translate(@offset_one_side);
+}
+
+.row(@off:1){
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    max-width:100%;
+    & when (@off = 1){
+        .row-offsets();
+    }
+}
+
+.row-x(@tag:0,@col:12,@xs:0,@sm:0,@md:0,@lg:0,@xl:0,@columns:@columns){
+    .row();
+    & when(isnumber(@tag)){
+        &>*{
+            .col-x(@tag,@col,@xs,@sm,@md,@lg,@xl);
+        }
+    }
+    & when not(isnumber(@tag)){
+        .@{tag}{
+            .col-x(@col,@xs,@sm,@md,@lg,@xl,@columns);
+        }
+    }
+}
+
+.row-grid(@col:@columns,@xs:0,@sm:0,@md:0,@lg:0,@xl:0){
+    display:grid;
+    grid-template-columns:repeat(@col, 1fr);
+    & when not(@xs=0){
+        .xs({grid-template-columns:repeat(@xs, 1fr);})
+    }
+    & when not(@sm=0){
+        .sm({grid-template-columns:repeat(@sm, 1fr);})
+    }
+    & when not(@md=0){
+        .md({grid-template-columns:repeat(@md, 1fr);})
+    }
+    & when not(@lg=0){
+        .lg({grid-template-columns:repeat(@lg, 1fr);})
+    }
+    & when not(@xl=0){
+        .xl({grid-template-columns:repeat(@xl, 1fr);})
+    }
+}

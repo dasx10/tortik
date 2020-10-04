@@ -1,0 +1,90 @@
+.col-offsets(){
+    .fw-mx(5,15);
+}
+.col-size(@n,@max-columns:@columns){
+    @val:100%/@max-columns*@n;
+    width:~"calc(@{val} - @{offset})";
+}
+.col(@n:@columns, @max-columns:@columns){
+    box-sizing: border-box;
+    word-wrap: break-word;
+    & when (@n > 0) {
+        @columns:@max-columns;
+        .col-offsets();
+        .col-size(@n,@columns);
+    }
+}
+
+.col-x(@col:12,@xs:0,@sm:0,@md:0,@lg:0,@xl:0,@columns:@columns){
+    .col(@col,@columns);
+    .cols(@xs,@sm,@md,@lg,@xl,@columns);
+}
+
+// COLUMN EXTRA SMAL
+.col-xs(@n:@columns,@columns:@columns){
+    .xs(.col-size(@n,@columns));
+}
+.col-xs-sm(@n:@columns,@columns:@columns){
+    .xs-sm(.col-size(@n,@columns));
+}
+.col-xs-md(@n:@columns,@columns:@columns){
+    .xs-md(.col-size(@n,@columns));
+}
+.col-xs-lg(@n:@columns,@columns:@columns){
+    .xs-lg(.col-size(@n,@columns));
+}
+.col-xs-xl(@n:@columns,@columns:@columns){
+    .xs-xl(.col-size(@n,@columns));
+}
+// COLUMN SMALL
+.col-sm(@n:@columns,@columns:@columns){
+    .sm(.col-size(@n,@columns));
+}
+.col-sm-md(@n:@columns,@columns:@columns){
+    .sm-md(.col-size(@n,@columns));
+}
+.col-sm-lg(@n:@columns,@columns:@columns){
+    .sm-lg(.col-size(@n,@columns));
+}
+.col-sm-xl(@n:@columns,@columns:@columns){
+    .sm-xl(.col-size(@n,@columns));
+}
+// COLUMNS MEDIUM
+.col-md(@n:@columns,@columns:@columns){ 
+    .md(.col-size(@n,@columns));
+}
+.col-md-lg(@n:@columns,@columns:@columns){ 
+    .md-lg(.col-size(@n,@columns));
+}
+.col-md-xl(@n:@columns,@columns:@columns){ 
+    .md-xl(.col-size(@n,@columns));
+}
+// COLUMN LARGE
+.col-lg(@n:@columns,@columns:@columns){
+    .lg(.col-size(@n,@columns));
+}
+.col-lg-xl(@n:@columns,@columns:@columns){
+    .lg-xl(.col-size(@n,@columns));
+}
+//COLUMN EXTRA LARGE
+.col-xl(@n:@columns,@columns:@columns){
+    .xl(.col-size(@n,@columns));
+}
+
+
+.col-corect(@col,@break,@col2:0,@break2:0,@col3:0,@break3:0,@col4:0,@break4:0,@col5:0,@break5:0){
+    & when not(@col=0){
+        & when(@col=@col2){
+            @col2:@col;
+            @break2:@break;
+        }
+        & when not(@col=@col2){
+            .break(.col-size(@col),@break,@break2);
+        }
+        .col-corect(@col2,@break2,@col3,@break3,@col4,@break4,@col5,@break5);
+    }
+}
+
+.cols(@xs:0,@sm:0,@md:0,@lg:0,@xl:0,@columns:@columns){
+    .col-corect(@xs,@break_xs,@sm,@break_sm,@md,@break_md,@lg,@break_lg,@xl,@break_xl);
+}

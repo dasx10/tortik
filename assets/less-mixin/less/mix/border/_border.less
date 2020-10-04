@@ -1,0 +1,41 @@
+.bd(@a:1px,@b:solid,@c:#000) when (iscolor(@a)){
+    border:1px solid @a;
+}
+
+.bd(@a:1px,@b:solid,@c:#000) when (iskeyword(@a)){
+    border:1px @a @c;
+}
+
+.bd(@a:1px,@b:solid,@c:#000) when (isnumber(@a)){
+    border:@a @b @c;
+}
+
+.bd-x(@border){
+    border-left:@border;
+    border-right:@border;
+}
+
+.bd-y(@border){
+    border-top:@border;
+    border-bottom:@border;
+}
+
+.bd-ex-t(@border){
+    .bd-y(@border);
+    border-bottom:@border;
+}
+
+.bd-ex-b(@border){
+    .bd-y(@border);
+    border-top:@border;
+}
+
+.bd-ex-r(@border){
+    .bd-x(@border);
+    border-left:@border;
+}
+
+.bd-ex-l(@border){
+    .bd-x(@border);
+    border-right:@border;
+}

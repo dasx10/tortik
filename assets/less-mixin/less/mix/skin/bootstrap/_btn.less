@@ -1,0 +1,38 @@
+.b-btn(@color:transparent, @outline:false, @large:'base'){
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid @color;
+    display: inline-block;
+    font-weight: 400;
+    vertical-align: middle;
+    line-height: 1.5;
+    & when (@large='base'){
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        border-radius: .25rem;
+    }
+    & when (@large='lg'){
+        padding: .5rem 1rem;
+        font-size: 1.25rem;
+        border-radius: .3rem;
+    }
+    & when (@large='sm'){
+        padding: .25rem .5rem;
+        font-size: .875rem;
+        border-radius: .2rem;
+    }
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    &:not(:disabled){
+        cursor:pointer;
+    }
+    & when (@outline = true){
+        color:@color;
+        background-color:transparent;
+    }
+    & when (@outline = false){
+        background-color: @color;
+        &:hover{
+            background-color: lighten(@color,10%);
+        }
+    }
+}

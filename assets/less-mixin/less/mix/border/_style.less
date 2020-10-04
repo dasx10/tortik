@@ -1,0 +1,29 @@
+.bds-x(@style){
+    border-left-style:@style;
+    border-right-style:@style;
+}
+
+.bds-y(@style){
+    border-top-style:@style;
+    border-bottom-style:@style;
+}
+
+.bds-ex-t(@style){
+    .bds-x(@style);
+    border-bottom-style:@style;
+}
+
+.bds-ex-b(@style){
+    .bds-x(@style);
+    border-top-style:@style;
+}
+
+.bds-ex-l(@style){
+    .bds-y(@style);
+    border-right-style:@style;
+}
+
+.bds-ex-r(@style){
+    .bds-y(@style);
+    border-left-style:@style;
+}

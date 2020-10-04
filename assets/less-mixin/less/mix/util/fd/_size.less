@@ -1,0 +1,150 @@
+.fd-size(@name,@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight)
+    {
+        @kw : (@fb - @fm)/(@desctopWidth - @mobileWidth);
+        @bw : @fm - @kw * @mobileWidth;
+        @kh : (@fb - @fm)/(@desctopHeight - @mobileHeight);
+        @bh : @fm - @kh * @mobileHeight;
+        @{name}: ~"calc((((100vw * @{kw}) + @{bw}px) / 2) + (((100vh * @{kh}) + @{bh}px) / 2));";
+    }
+
+.fd-set(
+    @name,
+    @fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight)
+    {
+        @kw : (@fb - @fm)/(@desctopWidth - @mobileWidth);
+        @bw : @fm - @kw * @mobileWidth;
+        @kh : (@fb - @fm)/(@desctopHeight - @mobileHeight);
+        @bh : @fm - @kh * @mobileHeight;
+        @fd-size: ~"calc((((100vw * @{kw}) + @{bw}px) / 2) + ((100vw * @{kh}) + @{bh}px)) / 2)";
+    }
+
+.fd-height(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-size(height,@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}
+
+.fd-max-height(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-size(max-height,@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}
+
+.fd-min-height(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-size(min-height,@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}
+
+.fd-width(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-size(width,@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}
+
+.fd-max-width(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-size(max-width,@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}
+
+.fd-min-width(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-size(min-width,@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}
+
+.fd-box(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-width(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+    .fd-height(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}
+
+.fd-max-size(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-max-width(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+    .fd-max-height(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}
+
+.fd-min-size(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight){
+    .fd-min-width(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+    .fd-min-height(@fm,@fb,
+    @desctopWidth:@desctopWidth,
+    @desctopHeight:@desctopHeight,
+    @mobileWidth:@mobileWidth,
+    @mobileHeight:@mobileHeight);
+}

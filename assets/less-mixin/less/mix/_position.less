@@ -1,0 +1,32 @@
+.-t(@n){
+    top: @n;
+}
+.-b(@n){
+    bottom: @n;
+}
+.-y(@n){
+    .-t(@n);
+    .-b(@n);
+}
+.-l(@n){
+    left: @n;
+}
+.-r(@n){
+    right: @n;
+}
+.-x(@n){
+    .-l(@n);
+    .-r(@n);
+}
+.-xy(@n){
+    .-y(@n);
+    .-x(@n);
+}
+
+.a-xy(@e,@n){
+    position: relative;    
+    @{e} {
+        position:absolute;
+        .-xy(@n)
+    }
+}

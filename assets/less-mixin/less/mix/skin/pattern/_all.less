@@ -1,0 +1,44 @@
+.skin-blueprint(@color:#269,@size:100px){
+    @small:@size / 5;
+    background-color: @color;
+    background-image:
+        linear-gradient(rgba(255,255,255,.5) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255,255,255,.5) 2px, transparent 2px),
+        linear-gradient(rgba(255,255,255,.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.28) 1px, transparent 1px);
+    background-size: @size @size, @size @size, @small @small, @small @small;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+.skin-frostyspirits(@color:lightblue,@size:2.8rem){
+    background: radial-gradient(circle at right, rgba(233, 241, 223, 0) 0.3333333333em, #E9F1DF 0.3333333333em, #E9F1DF 0.4888888889em, rgba(233, 241, 223, 0) 0.4888888889em, rgba(233, 241, 223, 0) 0.8222222222em, #E9F1DF 0.8222222222em, #E9F1DF 0.9777777778em, rgba(233, 241, 223, 0) 0.9777777778em, rgba(233, 241, 223, 0) 1.3111111111em, #E9F1DF 1.3111111111em, #E9F1DF 1.4666666667em, rgba(233, 241, 223, 0) 1.4666666667em) 0 0, radial-gradient(circle at left, rgba(233, 241, 223, 0) 0.5777777778em, #E9F1DF 0.5777777778em, #E9F1DF 0.7333333333em, rgba(233, 241, 223, 0) 0.7333333333em, rgba(233, 241, 223, 0) 1.0666666667em, #E9F1DF 1.0666666667em, #E9F1DF 1.2222222222em, rgba(233, 241, 223, 0) 1.2222222222em) 0 3.0514619883em, linear-gradient(to right top, #E9F1DF 0.1555555556em, rgba(233, 241, 223, 0) 0.1555555556em) 1.2222222222em 0.1555555556em, linear-gradient(to left top, #E9F1DF 0.1555555556em, rgba(233, 241, 223, 0) 0.1555555556em) 1.2222222222em 0.1555555556em, linear-gradient(to right bottom, #E9F1DF 0.1555555556em, rgba(233, 241, 223, 0) 0.1555555556em) 1.2222222222em 0.1555555556em, linear-gradient(to left bottom, #E9F1DF 0.1555555556em, rgba(233, 241, 223, 0) 0.1555555556em) 1.2222222222em 0.1555555556em;
+    background-size:@size @size;
+    background-color: @color;
+}
+
+.skin-blend(){
+    background: repeating-linear-gradient(-45deg, transparent, transparent 1em, rgba(240,120,120, 0.4) 0, rgba(240,120,120, 0.1) 2em, transparent 0, transparent 1em, rgba(240,120,120, 0.3) 0, rgba(240,120,120, 0.2) 4em, transparent 0, transparent 1em, rgba(192, 235, 250, 0.6) 0, rgba(192, 235, 250, 0.2) 2em), repeating-linear-gradient(45deg, transparent, transparent 1em, rgba(240,120,120, 0.4) 0, rgba(240,120,120, 0.1) 2em, transparent 0, transparent 1em, rgba(240,120,120, 0.3) 0, rgba(240,120,120, 0.2) 4em, transparent 0, transparent 1em, rgba(192, 235, 250, 0.4) 0, rgba(192, 235, 250, 0.1) 2em), #FFF;
+    background-blend-mode: multiply;
+}
+
+.skin-basket(@background:#335, @to-right:#dde, @to-left:#aab, @size:40px) {
+    background: linear-gradient(45deg, @to-right 12%, transparent 0, transparent 88%, @to-right 0), 
+                linear-gradient(135deg, transparent 37%, @to-left 0, @to-left 63%, transparent 0), 
+                linear-gradient(45deg, transparent 37%, @to-right 0, @to-right 63%, transparent 0), 
+                @background;
+    background-size: @size @size;
+}
+
+.skin-boxis(@c1:white,){
+    background-image:
+    repeating-linear-gradient(45deg, @c1 0, @c1 20px, transparent 20px, transparent 32px, @c1 32px, @c1 44px, transparent 44px, transparent 56px, @c1 56px, @c1 68px, transparent 68px, transparent 80px, @c1 0),
+    repeating-linear-gradient(-45deg, @c1 0, @c1 20px, transparent 20px, transparent 32px, @c1 32px, @c1 44px, transparent 44px, transparent 56px, @c1 56px, @c1 68px, transparent 68px, transparent 80px, @c1 0),
+    linear-gradient(to bottom right, #FC354C, #0ABFBC);
+}
+
+.skin-boxis2(@c1:white){
+    background-image:
+    repeating-linear-gradient(45deg, transparent 0, transparent 32px, @c1 32px, @c1 44px, transparent 44px, transparent 56px, @c1 56px, @c1 68px, transparent 0),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 32px, @c1 32px, @c1 44px, transparent 44px, transparent 56px, @c1 56px, @c1 68px, transparent 0),
+    linear-gradient(to bottom left, #FC354C, #0ABFBC);
+}

@@ -1,0 +1,18 @@
+.rotate(@deg:90){
+    transform:rotate(~"@{deg}deg");
+}
+.scale(@x:1.1,@y:1.1){
+    transform:scale(@size);
+}
+.translate(@a:0,@b:0) when not (@b){
+    transform: translate(@a,@b);
+}
+.translate(@a:0,@b:0){
+    transform: translate(@a,@b);
+}
+.skew(@a:0,@b:0) when not (@b) {
+    transform:skew(~"@{a}deg")
+} 
+.skew(@a:0,@b:0) {
+    transform:skew(~"@{a}deg,@{b}deg")
+}

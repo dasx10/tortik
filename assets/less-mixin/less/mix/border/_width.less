@@ -1,0 +1,29 @@
+.bdw-x(@width){
+    border-left-width:@width;
+    border-right-width:@width;
+}
+
+.bdw-y(@width){
+    border-top-width:@width;
+    border-bottom-width:@width;
+}
+
+.bdw-ex-t(@width){
+    .bdw-x(@width);
+    border-bottom-width:@width;
+}
+
+.bdw-ex-b(@width){
+    .bdw-x(@width);
+    border-top-width:@width;
+}
+
+.bdw-ex-l(@width){
+    .bdw-y(@width);
+    border-right-width:@width;
+}
+
+.bdw-ex-r(@width){
+    .bdw-y(@width);
+    border-left-width:@width;
+}

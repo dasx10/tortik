@@ -1,0 +1,116 @@
+.break(@props, @min:0, @max:0){
+    & when (@min > 0) and (@max > 0){
+        @media screen and (min-width:@min) and (max-width:@max){
+            @props();
+        }
+    }
+    & when (@min > 0) and (@max = 0){
+        @media screen and (min-width:@min){
+            @props();
+        }
+    }
+    & when (@min = 0) and (@max > 0){
+        @media screen and (max-width:@max){
+            @props();
+        }
+    }
+
+    & when (@min < 0){
+        .break(@props, @max, @min);
+    }
+}
+
+
+.breaks(@xs:0,@sm:0,@md:0,@lg:0,@xl:0){
+    & when not(@xs=0){
+        & when not(@sm=0){
+            .xs-sm(@xs);
+        }
+        & when(@sm=0){
+            .xs(@xs);
+        }
+    }
+
+    & when not(@sm=0){
+        & when not(@md=0){
+            .sm-md(@sm);
+        }
+        & when(@md=0){
+            .sm(@sm);
+        }
+    }
+
+    & when not(@md=0){
+        & when not(@lg=0){
+            .md-lg(@md);
+        }
+        & when(@lg=0){
+            .md(@md);
+        }
+    }
+
+    & when not(@lg=0){
+        & when not(@xl=0){
+            .lg-xl(@lg);
+        }
+        & when(@xl=0){
+            .lg(@lg);
+        }
+    }
+}
+
+
+// EXTRA SMALL
+.xs(@props){
+    .break(@props,@break_xs);
+}
+.xs-sm(@props){
+    .break(@props,@break_xs,@break_sm);
+}
+.xs-md(@props){
+    .break(@props,@break_xs,@break_md);
+}
+.xs-lg(@props){
+    .break(@props,@break_xs,@break_lg);
+}
+.xs-xl(@props){
+    .break(@props,@break_xs,@break_xl);
+}
+
+// SMALL
+.sm(@props){
+    .break(@props,@break_sm);
+}
+.sm-md(@props){
+    .break(@props,@break_sm,@break_md);
+}
+.sm-lg(@props){
+    .break(@props,@break_sm,@break_lg);
+}
+.sm-xl(@props){
+    .break(@props,@break_sm,@break_xl);
+}
+
+// MEDIUM
+.md(@props){
+    .break(@props,@break_md);
+}
+.md-lg(@props){
+    .break(@props,@break_md,@break_lg);
+}
+.md-xl(@props){
+    .break(@props,@break_sm,@break_xl);
+}
+
+// LARGE
+.lg(@props){
+    .break(@props,@break_lg);
+}
+.lg-xl(@props){
+    .break(@props,@break_lg,@break_xl);
+}
+
+// EXTRA LARGE
+.xl(@props){
+    .break(@props,@break_xl);
+}

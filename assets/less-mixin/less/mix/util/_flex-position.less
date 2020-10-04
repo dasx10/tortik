@@ -1,0 +1,35 @@
+.flex-top(@fm,@fb,@desctop:1920,@mobile:320){
+    .flex-size(top,@fm, @fb, @desctop, @mobile);
+}
+
+.flex-bottom(@fm,@fb,@desctop:1920,@mobile:320){
+    .flex-size(bottom,@fm, @fb, @desctop, @mobile);
+}
+
+.flex-left(@fm,@fb,@desctop:1920,@mobile:320){
+    .flex-size(left,@fm, @fb, @desctop, @mobile);
+}
+
+.flex-right(@fm,@fb,@desctop:1920,@mobile:320){
+    .flex-size(right ,@fm, @fb, @desctop, @mobile);
+}
+
+.flex-lt(@fm,@fb,@desctop:1920,@mobile:320){
+    .flex-left(@fm, @fb, @desctop, @mobile);
+    .flex-top(@fm, @fb, @desctop, @mobile);
+}
+
+.flex-lb(@fm,@fb,@desctop:1920,@mobile:320){
+    .flex-left(@fm, @fb, @desctop, @mobile);
+    .flex-bottom(@fm, @fb, @desctop, @mobile);
+}
+
+.flex-rt(@fm,@fb,@desctop:1920,@mobile:320){
+    .flex-right(@fm, @fb, @desctop, @mobile);
+    .flex-top(@fm, @fb, @desctop, @mobile);
+}
+
+.flex-rb(@fm,@fb,@desctop:1920,@mobile:320){
+    .flex-right(@fm, @fb, @desctop, @mobile);
+    .flex-bottom(@fm, @fb, @desctop, @mobile);
+}

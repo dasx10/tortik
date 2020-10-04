@@ -1,0 +1,35 @@
+.fw-top(@fm,@fb,@desctop:@desctopWidth,@mobile:@mobileWidth){
+    .fw-size(top,@fm, @fb, @desctop, @mobile);
+}
+
+.fw-bottom(@fm,@fb,@desctop:@desctopWidth,@mobile:@mobileWidth){
+    .fw-size(bottom,@fm, @fb, @desctop, @mobile);
+}
+
+.fw-left(@fm,@fb,@desctop:@desctopWidth,@mobile:@mobileWidth){
+    .fw-size(left,@fm, @fb, @desctop, @mobile);
+}
+
+.fw-right(@fm,@fb,@desctop:@desctopWidth,@mobile:@mobileWidth){
+    .fw-size(right ,@fm, @fb, @desctop, @mobile);
+}
+
+.fw-lt(@fm,@fb,@desctop:@desctopWidth,@mobile:@mobileWidth){
+    .fw-left(@fm, @fb, @desctop, @mobile);
+    .fw-top(@fm, @fb, @desctop, @mobile);
+}
+
+.fw-lb(@fm,@fb,@desctop:@desctopWidth,@mobile:@mobileWidth){
+    .fw-left(@fm, @fb, @desctop, @mobile);
+    .fw-bottom(@fm, @fb, @desctop, @mobile);
+}
+
+.fw-rt(@fm,@fb,@desctop:@desctopWidth,@mobile:@mobileWidth){
+    .fw-right(@fm, @fb, @desctop, @mobile);
+    .fw-top(@fm, @fb, @desctop, @mobile);
+}
+
+.fw-rb(@fm,@fb,@desctop:@desctopWidth,@mobile:@mobileWidth){
+    .fw-right(@fm, @fb, @desctop, @mobile);
+    .fw-bottom(@fm, @fb, @desctop, @mobile);
+}

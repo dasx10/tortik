@@ -1,0 +1,40 @@
+.round(@radius:50%){
+    border-radius:@radius;
+}
+
+.circle(@size:30px){
+    .box(@size);
+    .round();
+}
+
+.elipse(@width:30px,@height:30px,@radius:0){
+    width:@width;
+    height:@height;
+    & when (@width >= @height ){
+        .round(@width / 2);
+    }
+    & when (@width < @height){
+        .round(@height / 2);
+    }
+}
+
+.fh-circle(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fh-set(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .circle(@fh-size);
+}
+.fw-circle(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fw-set(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .circle(@fw-size);
+}
+.fd-circle(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fd-set(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .circle(@fd-size);
+}
+.fmax-circle(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmax-set(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .circle(@fmax-size);
+}
+.fmin-circle(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-set(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .circle(@fmin-size);
+}

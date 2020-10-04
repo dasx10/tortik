@@ -1,0 +1,32 @@
+.box(@n){
+    width:@n;
+    height:@n;
+}
+
+.mul-x(@n,@mul){
+    width: @n / @mul;
+    height: @n;
+}
+
+.mul-y(@n,@mul){
+    width: @n;
+    height: @n / @mul;
+}
+
+.divide-x(@n,@divide){
+    width: @n / @divide;
+    height: @n;
+}
+
+.divide-y(@n,@divide){
+    width: @n ;
+    height: @n / @divide;
+}
+
+.half-x(@n){
+    .divide-x(@n,2);
+}
+
+.half-y(@n){
+    .divide-y(@n,2);
+}

@@ -1,0 +1,11 @@
+.b-alert(@background, @border, @color) {
+  color: @color;
+  .gradient-bg(@background);
+  border-color: @border;
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+  .alert-link {
+    color: darken(@color, 10%);
+  }
+}

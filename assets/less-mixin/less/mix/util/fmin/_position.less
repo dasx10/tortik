@@ -1,0 +1,35 @@
+.fmin-top(@fm,@fb,@desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-size(top,@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+}
+
+.fmin-bottom(@fm,@fb,@desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-size(bottom,@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+}
+
+.fmin-left(@fm,@fb,@desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-size(left,@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+}
+
+.fmin-right(@fm,@fb,@desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-size(right ,@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+}
+
+.fmin-lt(@fm,@fb,@desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-left(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .fmin-top(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+}
+
+.fmin-lb(@fm,@fb,@desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-left(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .fmin-bottom(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+}
+
+.fmin-rt(@fm,@fb,@desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-right(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .fmin-top(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+}
+
+.fmin-rb(@fm,@fb,@desctop:@desctopHeight,@mobile:@mobileHeight){
+    .fmin-right(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+    .fmin-bottom(@fm, @fb, @desctop:@desctopHeight,@mobile:@mobileHeight);
+}

@@ -1,0 +1,33 @@
+.wrapper-full(@px:@offset_one_side, @px_lg:@offset_lg_one_side, @px_md:@offset_md_one_side, @px_sm:@offset_sm_one_side, @px_xs:@offset_xs_one_side){
+    .px(@px);
+    & when not(@px_lg = @px) {
+        .lg(.px(@px_lg));
+    }
+    & when not(@px_lg = @px_md) {
+        .md(.px(@px_md));
+    }
+    & when not(@px_md = @px_sm) {
+        .sm(.px(@px_sm));
+    }
+    & when not(@px_sm = @px_xs) {
+        .xs(.px(@px_xs));
+    }
+}
+
+.container(@width:@widthWrap){
+    max-width:@width;
+    .mx(auto);
+    .wrapper-full();
+}
+
+.wrapper(@width:@widthWrap){
+    box-sizing: border-box;
+    @val: ((@width) / 2);
+    @media (max-width:@widthWrap + @offset){
+        .px(@offset_one_side);
+    }
+    @media (min-width:@widthWrap + @offset){
+        .px(calc(50vw - @val));
+    }
+    width:100%;
+}
