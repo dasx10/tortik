@@ -1,16 +1,16 @@
 footer{
-    background:#944;
+    background:@color-primary;
     color: @color-light;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    .wrapper();
+    .wrp();
 }
 .social {
     &__list {
         display: flex;
         justify-content: space-between;
-        .fw-py(5,15);
+        .py(fw(5px,15px));
     }
 
     &__item {
@@ -21,6 +21,6 @@ footer{
     }
 
     &__icon {
-        .fw-box(20,30);
+        .box(fw(20px,30px));
     }
 }

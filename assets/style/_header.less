@@ -5,13 +5,12 @@
 .nav{
     width: 100%;
     display: flex;
-    .fw-min-height(50,150);
+    .mih(fw(50px,150px));
     &__list {
         display: flex;
         align-items: center;
         width:100%;
-        justify-content: space-around;
-        .xs-sm({justify-content: space-between});
+        .jc(space-around,s,space-between);
         list-style: none;
     }
 
@@ -25,7 +24,7 @@
         text-decoration: none;
         color:@color-dark;
         font-weight: 600;
-        .fw-font(12,20);
+        .fz(fw(12px,20px));
         &-active{
             color:@color-primary;
         }
@@ -33,17 +32,17 @@
     
     &__logo{
         &-preload{
-            .fw-box(40,150);
+            .box(fw(40px,150px));
             background: #944;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
-            .fw-font(12,32);
+            .fz(fw(12px,32px));
             color:white;
             justify-content: center;
             border:2px solid white;
             box-shadow: 0 0 0 2px #944,0 0 2px 2px #944;
         }
-        .fw-max-height(50,150);
+        .mh(fw(50px,150px));
     }
 }
